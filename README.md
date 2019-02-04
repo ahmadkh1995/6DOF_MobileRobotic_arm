@@ -1,5 +1,4 @@
-# My_Robotic
-Resources
+## Resources
 
 ### Sapienza University of Rome - Italy 
 ### Robotic Professors
