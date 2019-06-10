@@ -1,4 +1,4 @@
-## 6DOF Robotic Arm and Jetson Nano Project
+## 6DOF Robotic Arm and Jetson Nano Project(Under development!)
  #ROS #Gazebo #Rviz
 
 Assemble of Robotic Arm parts:
