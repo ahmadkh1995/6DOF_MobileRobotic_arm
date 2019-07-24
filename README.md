@@ -21,7 +21,7 @@
 
 Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
-**(INSTALLATION):**
+**(Installation):**
 
 **I) :**
 
@@ -50,13 +50,35 @@ Check that it marks no errors and no missing applications. Install whatever it m
 The make command will connect to the Internet in order to download the audios.bin which is a firmware needed for the MS Kinect to work, without it the device won't be able to function properly.  
 
        $ sudo make install
+       $ cd ../src
+       $ python fwfetcher.py
+       
+This will create audios.bin file.We should copy this into a directory then the system will open it as firmware .
+
        $ sudo ldconfig /usr/local/lib64/
+       
+Now we should create a new directory to add firmware to it.
+
+       $ cp -r /usr/local/include/libfreenect /usr/include/libfreenect   
+       $ sudo cp audios.bin /usr/local/share/libfreenect/
+       
+       
  Now plug the Kinect-360(v1) to the computer usb port and check the attached devices :
  
        $ lsusb | grep Xbox
        
   <p align="center" >
-    <img width="350" height="42"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/usb_list.png">
+    <img width="360" height="37"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/usb_list.png">
+  </p>
+
+**Test by an example :**
+       
+        $ cd ../build/bin
+        $ freenect-glview
+        
+   <p align="center" >
+    <img width="300" height="200"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/libfreenect_0.png">
+    <img width="350" height="280"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/libfreenect_1.png">
   </p>
 
 **III) :** **OpenNI Library:** 
