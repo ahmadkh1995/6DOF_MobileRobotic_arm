@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1586a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1586a.dir/build.make CMakeFiles/cmTC_1586a.dir/build
+make[1]: Entering directory '/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1586a.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_1586a.dir/CheckSymbolExists.cxx.o -c /home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+Linking CXX executable cmTC_1586a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1586a.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_1586a.dir/CheckSymbolExists.cxx.o  -o cmTC_1586a 
+CMakeFiles/cmTC_1586a.dir/CheckSymbolExists.cxx.o: In function `main':
+CheckSymbolExists.cxx:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1586a.dir/build.make:97: recipe for target 'cmTC_1586a' failed
+make[1]: *** [cmTC_1586a] Error 1
+make[1]: Leaving directory '/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1586a/fast' failed
+make: *** [cmTC_1586a/fast] Error 2
+
+File /home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_feb09/fast"
+/usr/bin/make -f CMakeFiles/cmTC_feb09.dir/build.make CMakeFiles/cmTC_feb09.dir/build
+make[1]: Entering directory '/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_feb09.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_feb09.dir/CheckFunctionExists.cxx.o -c /home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx
+Linking CXX executable cmTC_feb09
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_feb09.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_feb09.dir/CheckFunctionExists.cxx.o  -o cmTC_feb09 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_feb09.dir/build.make:97: recipe for target 'cmTC_feb09' failed
+make[1]: *** [cmTC_feb09] Error 1
+make[1]: Leaving directory '/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_feb09/fast' failed
+make: *** [cmTC_feb09/fast] Error 2
+
+

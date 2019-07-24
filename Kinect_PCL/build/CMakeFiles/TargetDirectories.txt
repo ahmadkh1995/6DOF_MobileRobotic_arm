@@ -1,0 +1,4 @@
+/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/rebuild_cache.dir
+/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/Kinect_PCL.dir
+/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/edit_cache.dir
+/home/ahmad/Downloads/Kinect/Kinect_PCL/build/CMakeFiles/Kinect_PCL_autogen.dir
