@@ -21,6 +21,12 @@
 
 Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
+
+Some additional notes about different models:
+
+**Kinect 1414:** This is the original kinect and works with the library documented on this page in the Processing 3.0 beta series.
+**Kinect 1473:** This looks identical to the 1414, but is an updated model. It should work with this library, but I don’t have one to test.
+
 **(Installation):**
 
 **I) :**
@@ -53,11 +59,11 @@ The make command will connect to the Internet in order to download the audios.bi
        $ cd ../src
        $ python fwfetcher.py
        
-This will create audios.bin file.We should copy this into a directory then the system will open it as firmware .
+This will create audios.bin file.I should copy this into a directory then the system will open it as firmware .
 
        $ sudo ldconfig /usr/local/lib64/
        
-Now we should create a new directory to add firmware to it.
+Now I should create a new directory to add firmware to it.
 
        $ cp -r /usr/local/include/libfreenect /usr/include/libfreenect   
        $ sudo cp audios.bin /usr/local/share/libfreenect/
@@ -139,3 +145,24 @@ Inside the OpenNI library :
 </p>
        
        
+### Project Development :
+
+I want to develop a "Mobile Robotic ARM" and use PCL Library for SLAM section.
+**I)** Project Folder is [Kinect_PCL]()
+
+CmakeLists.txt File :
+
+     cmake_minimum_required(VERSION 3.0.0) 
+     project(Kinect_PCL VERSION 0.1 LANGUAGES CXX)
+     set(CMAKE_INCLUDE_CURRENT_DIR ON)
+     set(CMAKE_AUTOMOC ON)
+     find_package(PCL 1.2 REQUIRED)
+     find_package(libfreenect REQUIRED)
+     include_directories(${PCL_INCLUDE_DIRS})
+     include_directories("/usr/include/libusb-1.0/")
+     link_directories(${PCL_LIBRARY_DIRS})
+     add_definitions(${PCL_DEFINITIONS})
+     add_executable(${PROJECT_NAME} "main.cpp")
+     target_link_libraries (${PROJECT_NAME} ${PCL_LIBRARIES}
+                                       ${FREENECT_LIBRARIES})
+
