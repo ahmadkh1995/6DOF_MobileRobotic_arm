@@ -22,10 +22,7 @@
 Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
 
-Some additional notes about different models:
-
-**Kinect 1414:** This is the original kinect and works with the library documented on this page in the Processing 3.0 beta series.
-**Kinect 1473:** This looks identical to the 1414, but is an updated model. It should work with this library, but I don’t have one to test.
+The Kinect360 sensor is equipped with a RGB camera(640x480 pixels at 30 FPS),an infra red projector and an infra red sensor.
 
 **(Installation):**
 
