@@ -81,6 +81,22 @@ Now we should create a new directory to add firmware to it.
     <img width="350" height="280"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/libfreenect_1.png">
   </p>
 
+Note:
+
+if you get an error :
+ 
+     libusb couldn’t open USB device /dev/bus/usb/001/006: Permission denied.
+Then run these commands:
+
+         $ sudo adduser $USER video
+         $ sudo nano /etc/udev/rules.d/51-kinect.rules
+         
+     # ATTR{product}=="Xbox NUI Motor" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02b0", MODE="0666"
+     # ATTR{product}=="Xbox NUI Audio" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ad", MODE="0666"
+     # ATTR{product}=="Xbox NUI Camera" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ae", MODE="0666"
+
+Then Logout and then Login again .
+
 **III) :** **OpenNI Library:** 
 
        $ git https://github.com/OpenNI/OpenNI
