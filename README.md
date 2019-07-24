@@ -3,7 +3,7 @@
 
 
 <p align="center" >
-   <img width="200" height="120" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
+   <img width="200" height="90" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
  </p>
  Assemble of Robotic Arm parts:
  <p align="center" >
@@ -22,7 +22,7 @@
 
 ### Connect Kinect360 to Linux(Ubuntu 18.04)
 
-Required Libraries :  **Freenect   **OpenNI   **PrimeSensor Modules  **NITE 
+Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
 ### (Installation)
     
@@ -34,6 +34,10 @@ if you get “Unable to locate package libglut3-dev” error, use this command
        $ sudo apt-get install doxygen mono-complete graphviz
        
 **Freenect Library:** 
+
+libfreenect is a cross-platform library that provides the necessary interfaces to activate, initialize, and communicate data with the Kinect hardware. Currently, the library supports access to RGB and depth video streams, motors, accelerometer and LED and provide binding in different languages (C++, Python...)
+
+This library is the low level component of the OpenKinect project which is an open community of people interested in making use of the Xbox Kinect hardware with PCs and other devices.[1](http://neuro.debian.net/pkgs/freenect.html)
 
        $ git https://github.com/OpenKinect/libfreenect 
        $ cd libfreenect
@@ -54,8 +58,10 @@ if you get “Unable to locate package libglut3-dev” error, use this command
        $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
        $ sudo ./install.sh
 
-**PrimeSensor Modules for OpenNI 
-       
+**PrimeSensor Modules for OpenNI : **
+  
+OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's depth sensor's technology.
+
        $ git https://github.com/avin2/SensorKinect
        $ cd SensorKinect
        $ cd Platform/Linux/CreateRedist
@@ -74,7 +80,7 @@ if you get “Unable to locate package libglut3-dev” error, use this command
        
  ### Test the Kinect360 configuration by running an example 
  
- inside the OpenNI library :
+Inside the OpenNI library :
  
        $ cd OpenNI/Platform/Linux/Bin/x64-Release/
        $ ./Sample-NiUserTracker
