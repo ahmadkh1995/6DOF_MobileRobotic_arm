@@ -1,5 +1,4 @@
-### Project based on a 6-DOF Robotic ARM with Jetson Nano Development
-
+### Project based on a 6-DOF Robotic ARM & Jetson Nano & Kinect360
 <p align="center" >
    <img width="200" height="90" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
  </p>
@@ -84,10 +83,10 @@ OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's
 Inside the OpenNI library :
  
        $ cd OpenNI/Platform/Linux/Bin/x64-Release/
-       $ ./Sample-NiUserTracker
- 
- 
-       
-       
+       $ ./ Sample-NiHandTracker
+
+<p align="center" >
+    <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/example_1.png">
+</p>
        
        
