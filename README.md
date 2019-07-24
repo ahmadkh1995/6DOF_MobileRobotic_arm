@@ -147,8 +147,9 @@ Inside the OpenNI library :
        
 ### Project Development :
 
-I want to develop a "Mobile Robotic ARM" and use PCL Library for SLAM section.
-**I)** Project Folder is [Kinect_PCL]()
+I want to develop a **Mobile Robotic ARM** and use PCL Library for SLAM section.
+
+**I)** Project Folder is **Kinect_PCL**
 
 CmakeLists.txt File :
 
