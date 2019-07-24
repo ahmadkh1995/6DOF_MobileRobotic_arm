@@ -47,7 +47,12 @@ This library is the low level component of the OpenKinect project which is an op
        $ make
        $ sudo make install
        $ sudo ldconfig /usr/local/lib64/
-  
+       $ lsusb | grep Xbox
+       
+  <p align="center" >
+    <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/usb_list.png">
+  </p>
+
 **III) :** **OpenNI Library:** 
 
        $ git https://github.com/OpenNI/OpenNI
