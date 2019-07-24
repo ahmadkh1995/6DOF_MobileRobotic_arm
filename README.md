@@ -146,7 +146,7 @@ I want to develop a **Mobile Robotic ARM** and use PCL Library for SLAM section.
 
 **I)** Project Folder For connecting the PCL Library to Kinect360 is located in Folder: **Kinect_PCL**
 
-To use the C++ interface to libfreenect:
+To use the **C++ interface to libfreenect**:
 - include libfreenect.hpp
 - derive a class from FreenectDevice
 - define callbacks.
