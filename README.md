@@ -147,6 +147,10 @@ Inside the OpenNI library :
 I want to develop a **Mobile Robotic ARM** and use PCL Library for SLAM section.
 
 **I)** Project Folder is **Kinect_PCL**
+To use the C++ interface to libfreenect:
+include libfreenect.hpp
+derive a class from FreenectDevice
+define callbacks.
 
 CmakeLists.txt File :
 
