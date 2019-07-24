@@ -21,7 +21,7 @@
 
 Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
-**(Installation):**
+**(INSTALLATION):**
 
 **I) :**
 
