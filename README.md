@@ -47,10 +47,12 @@ This library is the low level component of the OpenKinect project which is an op
        $ make
        $ sudo make install
        $ sudo ldconfig /usr/local/lib64/
+ Now plug the Kinect-360(v1) to the computer usb port and check the attached devices :
+ 
        $ lsusb | grep Xbox
        
   <p align="center" >
-    <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/usb_list.png">
+    <img width="350" height="42"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/usb_list.png">
   </p>
 
 **III) :** **OpenNI Library:** 
