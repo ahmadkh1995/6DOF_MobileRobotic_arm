@@ -1,4 +1,4 @@
-## 6DOF Robotic Arm and Jetson Nano Project(Under development!)
+### Project based on a 6-DOF Robotic ARM with Jetson Nano Development (Under development!)
  #ROS #Gazebo #Rviz #Kinect360 #Robot #Jetson_nano
 
 
@@ -20,20 +20,23 @@
  
 </p>
 
-### Connect Kinect360 to Linux(Ubuntu 18.04)
+### Connect Kinect360 to Linux(Ubuntu 18.04) 
 
 Required Libraries :  **Freenect**   **OpenNI**   **PrimeSensor Modules**  **NITE**
 
-### (Installation)
-    
+**(Installation):**
+
+**I) :**
+
        $ sudo apt-get install cmake libglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
        
 if you get “Unable to locate package libglut3-dev” error, use this command instead:
 
        $ sudo apt-get install cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
        $ sudo apt-get install doxygen mono-complete graphviz
-       
-**Freenect Library:** 
+ 
+
+**II) :** **Freenect Library:** 
 
 libfreenect is a cross-platform library that provides the necessary interfaces to activate, initialize, and communicate data with the Kinect hardware. Currently, the library supports access to RGB and depth video streams, motors, accelerometer and LED and provide binding in different languages (C++, Python...)
 
@@ -48,7 +51,7 @@ This library is the low level component of the OpenKinect project which is an op
        $ sudo make install
        $ sudo ldconfig /usr/local/lib64/
   
-**OpenNI Library:** 
+**III) :** **OpenNI Library:** 
 
        $ git https://github.com/OpenNI/OpenNI
        $ cd OpenNI
@@ -58,7 +61,7 @@ This library is the low level component of the OpenKinect project which is an op
        $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
        $ sudo ./install.sh
 
-**PrimeSensor Modules for OpenNI : **
+**IV) :** **PrimeSensor Modules for OpenNI : **
   
 OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's depth sensor's technology.
 
@@ -70,7 +73,7 @@ OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's
        $ cd ../Redist/Sensor-Bin-Linux-x64-v5.1.2.1/
        $ sudo sh install.sh
 
-**NITE :**(a SDK for joint tracking with the Microsoft Kinect)
+**V) :** **NITE :**(a SDK for joint tracking with the Microsoft Kinect)
 
        $ git https://github.com/arnaud-ramey/NITE-Bin-Dev-Linux-v1.5.2.23
        $ cd NITE-Bin-Dev-Linux-v1.5.2.23
@@ -78,7 +81,7 @@ OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's
        $ sudo bash install.sh
        
        
- ### Test the Kinect360 configuration by running an example 
+**VI) :** **Test the Kinect360 configuration by running an example**
  
 Inside the OpenNI library :
  
