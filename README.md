@@ -59,7 +59,7 @@ This library is the low level component of the OpenKinect project which is an op
        $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
        $ sudo ./install.sh
 
-**IV) :** **PrimeSensor Modules for OpenNI : **
+**IV) :** **PrimeSensor Modules for OpenNI :**
   
 OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's depth sensor's technology.
 
