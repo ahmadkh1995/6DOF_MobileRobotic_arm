@@ -144,6 +144,8 @@ Inside the OpenNI library :
 
 I want to develop a **Mobile Robotic ARM** and use PCL Library for SLAM section.
 
+**PCL :** I developed another project in which I include tutorials for installing PCL Library and its dependencies [here](https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic).
+
 **I)** Project Folder For connecting the PCL Library to Kinect360 is located in Folder: **Kinect_PCL**
 
 To use the **C++ interface to libfreenect**:
