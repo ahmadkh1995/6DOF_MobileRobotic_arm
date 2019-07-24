@@ -1,4 +1,4 @@
-### Project based on a 6-DOF Robotic ARM with Jetson Nano Development (Under development!)
+### Project based on a 6-DOF Robotic ARM with Jetson Nano Development
  #ROS #Gazebo #Rviz #Kinect360 #Robot #Jetson_nano
 
 
