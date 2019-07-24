@@ -44,7 +44,11 @@ This library is the low level component of the OpenKinect project which is an op
        $ mkdir build
        $ cd build
        $ cmake ..
+Check that it marks no errors and no missing applications. Install whatever it marks and then proceed with the making.   
+       
        $ make
+The make command will connect to the Internet in order to download the audios.bin which is a firmware needed for the MS Kinect to work, without it the device won't be able to function properly.  
+
        $ sudo make install
        $ sudo ldconfig /usr/local/lib64/
  Now plug the Kinect-360(v1) to the computer usb port and check the attached devices :
