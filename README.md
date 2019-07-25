@@ -187,7 +187,9 @@ To use the **C++ interface to libfreenect**:
 **MyFreenectDevice class:**
 
 **depth(A,B ,VideoCallback,DepthCallback) :
+
 **A:** *freenect_find_depth_mode() :* return a mode descriptor matching the specified resolution and depth camera pixel format
+
 **B:** *freenect_find_video_mode() :* return a mode descriptor matching the specified resolution and video camera pixel format
 
 
