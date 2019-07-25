@@ -170,3 +170,29 @@ To use the **C++ interface to libfreenect**:
                                        ${FREENECT_LIBRARIES})
 
 **Main.cpp** File:
+
+**Mutex class:** A synchronization primitive that can also be used for interprocess synchronization.
+- A local Mutex object is used to synchronize access to a protected resource
+
+ *Mutex::ScopeLock:*
+    A class that simplifies thread synchronization with a mutex. The constructor accepts 
+    a Mutex (and optionally a timeout value in milliseconds) and locks it. The destructor
+    unlocks the mutex. 
+    When a scoped_lock object is created, it attempts to take ownership of the mutexes 
+    it is given. When control leaves the scope in which the scoped_lock object was created,
+    the scoped_lock is destructed and the mutexes are released, in reverse order.
+    If several mutexes are given, deadlock avoidance algorithm is used as if by std::lock.    
+- The scoped_lock class is non-copyable.[Ref](https://en.cppreference.com/w/cpp/thread/scoped_lock)
+
+**MyFreenectDevice class:**
+
+**depth(A,B ,VideoCallback,DepthCallback) :
+**A:** *freenect_find_depth_mode() :* return a mode descriptor matching the specified resolution and depth camera pixel format
+**B:** *freenect_find_video_mode() :* return a mode descriptor matching the specified resolution and video camera pixel format
+
+
+**getRGB()** ///// **getDepth()**
+
+
+
+
