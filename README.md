@@ -146,55 +146,31 @@ I want to develop a **Mobile Robotic ARM** and use PCL Library for SLAM section.
 
 **PCL :** I developed another project in which I include tutorials for installing PCL Library and its dependencies [here](https://github.com/ahmadkh1995/PCL_Probabilistic_Robotic).
 
-**I)** Project Folder For connecting the PCL Library to Kinect360 is located in Folder: **Kinect_PCL**
+**I)** Project Folder For connecting the ROS to Kinect360 is located in Folder: **Kinect_ROS**
 
-To use the **C++ interface to libfreenect**:
-- include libfreenect.hpp
-- derive a class from FreenectDevice
-- define callbacks.
+For using Kinect in ROS ,these packages are necessary :
+- [openni_launch](http://wiki.ros.org/openni_launch) : Launch files to open an OpenNI device and load all nodelets to convert raw depth/RGB/IR streams to depth images
+- [openni_camera packages](http://wiki.ros.org/openni_camera) : A ROS driver for OpenNI depth (+ RGB) cameras
+- [openni_description](http://wiki.ros.org/openni_description) : Model files of OpenNI device
+- [rgbd_launch](http://wiki.ros.org/rgbd_launch) : Launch files to open an RGBD device and load all nodelets to convert raw depth/RGB/IR streams to depth images 
 
-**CmakeLists.txt** File :
+In ROS(Melodic) workspace root directory  :
 
-    cmake_minimum_required(VERSION 3.0.0)
-    project(Kinect_PCL VERSION 0.1 LANGUAGES CXX)
-    set(CMAKE_INCLUDE_CURRENT_DIR ON)
-    set(CMAKE_AUTOMOC ON)
-    find_package(PCL 1.2 REQUIRED)
-    find_package(libfreenect REQUIRED)
-    include_directories(${PCL_INCLUDE_DIRS})
-    include_directories("/usr/include/libusb-1.0/")
-    link_directories(${PCL_LIBRARY_DIRS})
-    add_definitions(${PCL_DEFINITIONS})
-    add_executable(${PROJECT_NAME} "main.cpp")
-    target_link_libraries (${PROJECT_NAME} ${PCL_LIBRARIES}
-                                       ${FREENECT_LIBRARIES})
+First terminal tab :
 
-**Main.cpp** File:
+     $ catkin_make
+     $ roscore 
+Second terminal tab :
 
-**Mutex class:** A synchronization primitive that can also be used for interprocess synchronization.
-- A local Mutex object is used to synchronize access to a protected resource
+     $ roslaunch openni_launch openni.launch depth_registration:=true device_id:=#2
+**depth_registration :** indicates that we want to enable OpenNI registration and receive XYZRGB camera data (depth and color)
 
- *Mutex::ScopeLock:*
-    A class that simplifies thread synchronization with a mutex. The constructor accepts 
-    a Mutex (and optionally a timeout value in milliseconds) and locks it. The destructor
-    unlocks the mutex. 
-    When a scoped_lock object is created, it attempts to take ownership of the mutexes 
-    it is given. When control leaves the scope in which the scoped_lock object was created,
-    the scoped_lock is destructed and the mutexes are released, in reverse order.
-    If several mutexes are given, deadlock avoidance algorithm is used as if by std::lock.    
-- The scoped_lock class is non-copyable.[Ref](https://en.cppreference.com/w/cpp/thread/scoped_lock)
+Third terminal tab :
 
-**MyFreenectDevice class:**
+     $ rosrun rviz rviz
+After lunching the Rviz , in **Fixed frame** section choose :  camera_link .
+and then add new display **PointCloud2** and for Topic section of it choose : camera / depth_registered / points
 
-**depth(A,B ,VideoCallback,DepthCallback) :
-
-**A:** *freenect_find_depth_mode() :* return a mode descriptor matching the specified resolution and depth camera pixel format
-
-**B:** *freenect_find_video_mode() :* return a mode descriptor matching the specified resolution and video camera pixel format
-
-
-**getRGB()** ///// **getDepth()**
-
-
-
-
+<p align="center" >
+    <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Rviz_test_1.png">
+</p>
