@@ -199,5 +199,5 @@ Project's [Kinect_PCL](https://github.com/ahmadkh1995/My_Robotic/tree/master/Pro
     $ rosrun Kinect_PCL Kinect_PCL_file input:=/camera/depth/points
     $ rosrun rviz rviz
 
-Add **PointCloud2** display.For **Frame :** *camera_depth_frame* .For **Topic :** *output*
+Add **PointCloud2** display.||||||||For **Frame :** *camera_depth_frame* .|||||||For **Topic :** *output*
 
