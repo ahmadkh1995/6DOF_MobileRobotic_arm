@@ -2,7 +2,8 @@
 <p align="center" >
    <img width="200" height="90" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
  </p>
- Assemble of Robotic Arm parts:
+ **Assemble of Robotic Arm parts**
+ 
  <p align="center" >
   <img width="180" height="150" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/1.jpg">
   <img width="180" height="150" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/2.jpg">
@@ -168,9 +169,10 @@ Second terminal tab :
 Third terminal tab :
 
      $ rosrun rviz rviz
-After lunching the Rviz , in **Fixed frame** section choose :  camera_link .
-and then add new display **PointCloud2** and for Topic section of it choose : camera / depth_registered / points
+After lunching the Rviz , in **Fixed frame** section choose :  *camera_link* .
+
+and then **Add** new display *PointCloud2* and for **Topic** choose : *camera / depth_registered / points*
 
 <p align="center" >
-    <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Rviz_test_1.png">
+    <img width="400" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Rviz_test_1.png">
 </p>
