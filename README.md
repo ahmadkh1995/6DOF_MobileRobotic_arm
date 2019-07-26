@@ -1,7 +1,5 @@
 ### Project based on a 6-DOF Robotic ARM & Jetson Nano & Kinect360
-<p align="center" >
-   <img width="200" height="90" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
- </p>
+
  **Assemble of Robotic Arm parts**
  
  <p align="center" >
@@ -14,8 +12,12 @@
   <img width="180" height="150"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/7.jpg">
   <img width="180" height="150"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/8.jpg">
   <img width="180" height="150" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/9.jpg">
-  <img width="180" height="150"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/10.jpg">
- 
+   </p>
+   
+  <p align="center" >
+  <img width="200" height="150"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Assembly/10.jpg">
+  <img width="200" height="90" src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Logos/kinect360.jpg">
+
 </p>
 
 ### Connect Kinect360 to Linux(Ubuntu 18.04) 
@@ -162,7 +164,8 @@ First terminal tab :
      $ catkin_make
      $ roscore 
 Second terminal tab :
-
+     
+     $ source devel/setup.bash
      $ roslaunch openni_launch openni.launch depth_registration:=true device_id:=#2
 **depth_registration :** indicates that we want to enable OpenNI registration and receive XYZRGB camera data (depth and color)
 
@@ -176,3 +179,25 @@ and then **Add** new display *PointCloud2* and for **Topic** choose : *camera / 
 <p align="center" >
     <img width="400" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/Rviz_test_1.png">
 </p>
+
+4 types of representing  point cloud data in the PCL Library [Ref](http://wiki.ros.org/pcl/Tutorials) : 
+
+- sensor_msgs::PointCloud — ROS message (deprecated)
+
+- sensor_msgs::PointCloud2 — ROS message  (used in this project)
+
+- pcl::PCLPointCloud2 — PCL data structure mostly for compatibility with ROS 
+
+- pcl::PointCloud<T> — standard PCL data structure
+
+Project's [Kinect_PCL](https://github.com/ahmadkh1995/My_Robotic/tree/master/Project_codes/catkin_ws/Kinect_PCL) package :
+
+    $ catkin_make
+    $ roscore
+    $ source devel/setup.bash      
+    $ roslaunch openni_launch openni.launch depth_registration:=true device_id:=#2
+    $ rosrun Kinect_PCL Kinect_PCL_file input:=/camera/depth/points
+    $ rosrun rviz rviz
+
+Add **PointCloud2** display.For **Frame :** *camera_depth_frame* .For **Topic :** *output*
+
