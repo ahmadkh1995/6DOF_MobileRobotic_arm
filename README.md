@@ -196,7 +196,7 @@ Project's [Kinect_PCL](https://github.com/ahmadkh1995/My_Robotic/tree/master/Pro
     $ roscore
     $ source devel/setup.bash      
     $ roslaunch openni_launch openni.launch depth_registration:=true device_id:=#2
-    $ rosrun Kinect_PCL Kinect_PCL_file input:=/camera/depth/points
+    $ rosrun kinect_pcl kinect_pcl_file input:=/camera/depth/points
     $ rosrun rviz rviz
 
 Add **PointCloud2** display.||||||||For **Frame :** *camera_depth_frame* .|||||||For **Topic :** *output*
