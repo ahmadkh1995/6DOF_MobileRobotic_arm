@@ -204,12 +204,14 @@ Add **PointCloud2** display.||||||||For **Frame :** *camera_depth_frame* .||||||
 ### SLAM (*Simultaneous localization and mapping*) :
 
 ROS associated package : [GMapping](http://www.openslam.org)
+
 which requires odometry data and a source of depth data.To use the depth image for SLAM ,the point cloud should be converted  to a faked laser scan signal by cutting a horizontal slice out of the image and using the nearest distance (closest depth) in each column.
       
 **Create a 2-D map from logged transform and laser scan data :**
 Required Packages:
 
 **map_server:** allows dynamically generated maps to be saved to file.
+
 **openslam_gmapping** ||| **slam_gmapping** 
 
     //catkin_ws/src  directory
