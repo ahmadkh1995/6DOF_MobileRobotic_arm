@@ -201,3 +201,26 @@ Project's [Kinect_PCL](https://github.com/ahmadkh1995/My_Robotic/tree/master/Pro
 
 Add **PointCloud2** display.||||||||For **Frame :** *camera_depth_frame* .|||||||For **Topic :** *output*
 
+### SLAM (*Simultaneous localization and mapping*) :
+
+ROS associated package : [GMapping](http://www.openslam.org)
+which requires odometry data and a source of depth data.To use the depth image for SLAM ,the point cloud should be converted  to a faked laser scan signal by cutting a horizontal slice out of the image and using the nearest distance (closest depth) in each column.
+      
+**Create a 2-D map from logged transform and laser scan data :**
+I need a ROS bag file.so First I should create a new one or if you have your own run this command:
+
+    //catkin_ws/src  directory
+    $ git clone https://github.com/ros-perception/openslam_gmapping
+    $ git clone https://github.com/ros-perception/slam_gmapping
+    $ catkin_make
+    $ roscore
+    $ rosrun gmapping slam_gmapping scan:=base_scan
+    $ rosbag play --clock <name of the bag file>
+    Wait for rosbag to finish and exit. 
+    $ rosrun map_server map_saver -f <my map_name>
+
+     
+
+
+
+
