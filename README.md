@@ -157,8 +157,8 @@ For using Kinect in ROS ,these packages are necessary :
 - [openni_description](http://wiki.ros.org/openni_description) : Model files of OpenNI device
 - [rgbd_launch](http://wiki.ros.org/rgbd_launch) : Launch files to open an RGBD device and load all nodelets to convert raw depth/RGB/IR streams to depth images 
 
-In ROS(Melodic) workspace root directory  :
-
+### PointCloud :
+      //In ROS(Melodic) workspace root directory  :
 First terminal tab :
 
      $ catkin_make
@@ -207,17 +207,30 @@ ROS associated package : [GMapping](http://www.openslam.org)
 which requires odometry data and a source of depth data.To use the depth image for SLAM ,the point cloud should be converted  to a faked laser scan signal by cutting a horizontal slice out of the image and using the nearest distance (closest depth) in each column.
       
 **Create a 2-D map from logged transform and laser scan data :**
-I need a ROS bag file.so First I should create a new one or if you have your own run this command:
+Required Packages:
+
+**map_server:** allows dynamically generated maps to be saved to file.
+**openslam_gmapping** ||| **slam_gmapping** 
 
     //catkin_ws/src  directory
     $ git clone https://github.com/ros-perception/openslam_gmapping
     $ git clone https://github.com/ros-perception/slam_gmapping
+    $ git clone https://github.com/ros-planning/navigation
     $ catkin_make
     $ roscore
     $ rosrun gmapping slam_gmapping scan:=base_scan
-    $ rosbag play --clock <name of the bag file>
-    Wait for rosbag to finish and exit. 
+I need a ROS bag file.So first I should create a new one : 
+
+    $ rosbag record -O mylaserdata /base_scan /tf
+or if you have your own run this command:
+
+    $ rosbag play --clock <name of the bag>
+      //Wait for rosbag to finish and exit....
     $ rosrun map_server map_saver -f <my map_name>
+
+
+
+
 
      
 
