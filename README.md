@@ -99,6 +99,11 @@ Then run these commands:
      # ATTR{product}=="Xbox NUI Audio" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ad", MODE="0666"
      # ATTR{product}=="Xbox NUI Camera" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ae", MODE="0666"
 
+now after saving it , try theses commands before running ’freenect-glview’;
+
+     $ freenect-micview
+     $ freenect-camtest
+     $ freenect-glview
 Then Logout and then Login again .
 
 **III) :** **OpenNI Library:** 
