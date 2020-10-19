@@ -31,12 +31,12 @@ The Kinect360 sensor is equipped with a RGB camera(640x480 pixels at 30 FPS),an 
 
 **I) :**
 
-       $ sudo apt-get install cmake libglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
+    $ sudo apt-get install cmake libglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
        
 if you get “Unable to locate package libglut3-dev” error, use this command instead:
 
-       $ sudo apt-get install cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
-       $ sudo apt-get install doxygen mono-complete graphviz
+    $ sudo apt-get install cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev python
+    $ sudo apt-get install doxygen mono-complete graphviz
  
 
 **II) :** **Freenect Library:** 
@@ -45,28 +45,28 @@ libfreenect is a cross-platform library that provides the necessary interfaces t
 
 This library is the low level component of the OpenKinect project which is an open community of people interested in making use of the Xbox Kinect hardware with PCs and other devices.[1](http://neuro.debian.net/pkgs/freenect.html)
 
-       $ git clone https://github.com/OpenKinect/libfreenect 
-       $ cd libfreenect
-       $ mkdir build
-       $ cd build
-       $ cmake ..
+    $ git clone https://github.com/OpenKinect/libfreenect 
+    $ cd libfreenect
+    $ mkdir build
+    $ cd build
+    $ cmake ..
 Check that it marks no errors and no missing applications. Install whatever it marks and then proceed with the making.   
        
        $ make
 The make command will connect to the Internet in order to download the audios.bin which is a firmware needed for the MS Kinect to work, without it the device won't be able to function properly.  
 
-       $ sudo make install
-       $ cd ../src
-       $ python fwfetcher.py
+    $ sudo make install
+    $ cd ../src
+    $ python fwfetcher.py
        
 This will create audios.bin file.I should copy this into a directory then the system will open it as firmware .
 
-       $ sudo ldconfig /usr/local/lib64/
+    $ sudo ldconfig /usr/local/lib64/
        
 Now I should create a new directory to add firmware to it.
 
-       $ cp -r /usr/local/include/libfreenect /usr/include/libfreenect   
-       $ sudo cp audios.bin /usr/local/share/libfreenect/
+    $ cp -r /usr/local/include/libfreenect /usr/include/libfreenect   
+    $ sudo cp audios.bin /usr/local/share/libfreenect/
        
        
  Now plug the Kinect-360(v1) to the computer usb port and check the attached devices :
@@ -92,8 +92,8 @@ Now I should create a new directory to add firmware to it.
      libusb couldn’t open USB device /dev/bus/usb/001/006: Permission denied.
 Then run these commands:
 
-         $ sudo adduser $USER video
-         $ sudo nano /etc/udev/rules.d/51-kinect.rules
+    $ sudo adduser $USER video
+    $ sudo nano /etc/udev/rules.d/51-kinect.rules
  Add these lines :        
 - Rules for Kinect-for-Xbox model 1414:
 
@@ -109,20 +109,20 @@ Then run these commands:
 
 now after saving it , try theses commands before running ’freenect-glview’;
 
-     $ freenect-micview
-     $ freenect-camtest
-     $ freenect-glview
+    $ freenect-micview
+    $ freenect-camtest
+    $ freenect-glview
 Then Logout and then Login again .
 
 **III) :** **OpenNI Library:** 
 
-       $ git clone https://github.com/OpenNI/OpenNI
-       $ cd OpenNI
-       $ cd Platform/Linux/CreateRedist
-       $ chmod +x ./RedistMaker
-       $ ./RedistMaker
-       $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
-       $ sudo ./install.sh
+    $ git clone https://github.com/OpenNI/OpenNI
+    $ cd OpenNI
+    $ cd Platform/Linux/CreateRedist
+    $ chmod +x ./RedistMaker
+    $ ./RedistMaker
+    $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
+    $ sudo ./install.sh
 Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to versions:4.8,6,7 to fix the problem :
 
     $ sudo update-alternatives --remove-all gcc 
@@ -148,20 +148,22 @@ Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to 
   
 OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's depth sensor's technology.
 
-       $ git clone https://github.com/avin2/SensorKinect
-       $ cd SensorKinect
-       $ cd Platform/Linux/CreateRedist
-       $ chmod a+x RedistMaker
-       $ sudo ./RedistMaker
-       $ cd ../Redist/Sensor-Bin-Linux-x64-v5.1.2.1/
-       $ sudo sh install.sh
+    $ git clone https://github.com/avin2/SensorKinect
+    $ cd SensorKinect
+    $ cd Platform/Linux/CreateRedist
+    $ chmod a+x RedistMaker
+    $ sudo ./RedistMaker
+    $ cd ../Redist/Sensor-Bin-Linux-x64-v5.1.2.1/
+    $ sudo sh install.sh
+
+Note: It is possible that if you have changed versions of gcc ,builld of ./RedistMaker fail ,so you should return to default version of gcc (or remove all of them and install new one)
 
 **V) :** **NITE :**(a SDK for joint tracking with the Microsoft Kinect)
 
-       $ git clone https://github.com/arnaud-ramey/NITE-Bin-Dev-Linux-v1.5.2.23
-       $ cd NITE-Bin-Dev-Linux-v1.5.2.23
-       $ cd x64
-       $ sudo bash install.sh
+    $ git clone https://github.com/arnaud-ramey/NITE-Bin-Dev-Linux-v1.5.2.23
+    $ cd NITE-Bin-Dev-Linux-v1.5.2.23
+    $ cd x64
+    $ sudo bash install.sh
        
        
 **VI) :** **Test the Kinect360 configuration by running an example**
