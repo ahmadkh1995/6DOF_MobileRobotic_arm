@@ -170,13 +170,26 @@ Note: It is possible that if you have changed versions of gcc ,builld of ./Redis
  
 Inside the OpenNI library :
  
-       $ cd OpenNI/Platform/Linux/Bin/x64-Release/
-       $ ./ Sample-NiHandTracker
+    $ cd OpenNI/Platform/Linux/Bin/x64-Release/
+    $ ./ Sample-NiHandTracker
 
 <p align="center" >
     <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/example_1.png">
 </p>
        
+### Configure kinect for ros depending on your ros version(kinetic,melodic etc.) :     
+    
+    $ sudo apt-get install ros-<rosdistro>-openni-camera
+    $ sudo apt-get install ros-<rosdistro>-openni-launch
+ to test in ros(Also copy packages of openni-camera and openni-launch to src folder of your catkin workspace) :
+    
+    $ catkin_make
+    $ roscore
+    $ roslaunch openni_launch openni.launch    
+    $ rosrun rviz rviz    
+    
+Set the Fixed Frame (top left of rviz window) to /camera_depth_optical_frame.
+Add a PointCloud2 display, and set the topic to /camera/depth/points. Turning the background to light gray can help with viewing. This is the unregistered point cloud in the frame of the depth (IR) camera. It is not matched with the RGB camera images.[src](http://wiki.ros.org/openni_launch). 
        
 ### Project Development :
 
