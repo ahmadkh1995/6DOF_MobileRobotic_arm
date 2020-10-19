@@ -45,7 +45,7 @@ libfreenect is a cross-platform library that provides the necessary interfaces t
 
 This library is the low level component of the OpenKinect project which is an open community of people interested in making use of the Xbox Kinect hardware with PCs and other devices.[1](http://neuro.debian.net/pkgs/freenect.html)
 
-       $ git https://github.com/OpenKinect/libfreenect 
+       $ git clone https://github.com/OpenKinect/libfreenect 
        $ cd libfreenect
        $ mkdir build
        $ cd build
@@ -94,10 +94,16 @@ Then run these commands:
 
          $ sudo adduser $USER video
          $ sudo nano /etc/udev/rules.d/51-kinect.rules
-         
-     # ATTR{product}=="Xbox NUI Motor" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02b0", MODE="0666"
-     # ATTR{product}=="Xbox NUI Audio" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ad", MODE="0666"
-     # ATTR{product}=="Xbox NUI Camera" SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02ae", MODE="0666"
+ Add these lines :        
+- Rules for Kinect-for-Xbox model 1414:
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02ad", TAG+="uaccess"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02ae", TAG+="uaccess"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02b0", TAG+="uaccess"
+    
+- Rules for Kinect-for-Xbox model 1473 and Kinect-for-Windows model 1517:
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02be", TAG+="uaccess"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02bf", TAG+="uaccess"
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="045e", ATTRS{idProduct}=="02c2", TAG+="uaccess"
 
 now after saving it , try theses commands before running ’freenect-glview’;
 
@@ -108,7 +114,7 @@ Then Logout and then Login again .
 
 **III) :** **OpenNI Library:** 
 
-       $ git https://github.com/OpenNI/OpenNI
+       $ git clone https://github.com/OpenNI/OpenNI
        $ cd OpenNI
        $ cd Platform/Linux/CreateRedist
        $ chmod +x ./RedistMaker
@@ -130,7 +136,7 @@ OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's
 
 **V) :** **NITE :**(a SDK for joint tracking with the Microsoft Kinect)
 
-       $ git https://github.com/arnaud-ramey/NITE-Bin-Dev-Linux-v1.5.2.23
+       $ git clone https://github.com/arnaud-ramey/NITE-Bin-Dev-Linux-v1.5.2.23
        $ cd NITE-Bin-Dev-Linux-v1.5.2.23
        $ cd x64
        $ sudo bash install.sh
