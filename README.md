@@ -123,6 +123,26 @@ Then Logout and then Login again .
        $ ./RedistMaker
        $ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10/
        $ sudo ./install.sh
+Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to versions:4.8,6,7 to fix the problem :
+
+    $ sudo update-alternatives --remove-all gcc 
+    $ sudo update-alternatives --remove-all g++
+
+    $ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 10
+    $ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 20
+    $ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 30
+
+    $ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 10
+    $ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 20
+    $ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 30
+
+    $ sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc 40
+    $ sudo update-alternatives --set cc /usr/bin/gcc
+
+    $ sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 40
+    $ sudo update-alternatives --set c++ /usr/bin/g++
+
+
 
 **IV) :** **PrimeSensor Modules for OpenNI :**
   
