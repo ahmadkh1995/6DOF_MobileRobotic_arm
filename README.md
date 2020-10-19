@@ -148,7 +148,7 @@ Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to 
   
 OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's depth sensor's technology.
 
-       $ git https://github.com/avin2/SensorKinect
+       $ git clone https://github.com/avin2/SensorKinect
        $ cd SensorKinect
        $ cd Platform/Linux/CreateRedist
        $ chmod a+x RedistMaker
