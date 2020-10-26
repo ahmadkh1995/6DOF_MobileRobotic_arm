@@ -142,6 +142,7 @@ Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to 
     $ sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ 40
     $ sudo update-alternatives --set c++ /usr/bin/g++
 
+Now, you should set gcc and g++ to version 4.8 :
 
 
 **IV) :** **PrimeSensor Modules for OpenNI :**
@@ -157,6 +158,9 @@ OpenNI is primarly developed by PrimeSence, which is the company behind Kinect's
     $ sudo sh install.sh
 
 Note: It is possible that if you have changed versions of gcc ,builld of ./RedistMaker fail ,so you should return to default version of gcc (or remove all of them and install new one)
+
+    $ sudo update-alternatives --config gcc
+    $ sudo update-alternatives --config g++
 
 **V) :** **NITE :**(a SDK for joint tracking with the Microsoft Kinect)
 
