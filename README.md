@@ -175,7 +175,7 @@ Note: It is possible that if you have changed versions of gcc ,builld of ./Redis
 Inside the OpenNI library :
  
     $ cd OpenNI/Platform/Linux/Bin/x64-Release/
-    $ ./ Sample-NiHandTracker
+    $ ./Sample-NiHandTracker
 
 <p align="center" >
     <img width="300" height="250"  src="https://github.com/ahmadkh1995/My_Robotic/blob/master/Photos/example_1.png">
