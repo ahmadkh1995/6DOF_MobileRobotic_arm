@@ -147,6 +147,10 @@ Now, you should set gcc and g++ to version 4.8 :
     $ sudo update-alternatives --config gcc
     $ sudo update-alternatives --config g++
 
+If still build error exsit , maybe we need to install JDK (Java Development Kit). The JDK is usually only needed if we are going to compile Java programs or if the software that will use Java specifically requires it.
+
+    $ sudo apt-get install default-jdk
+    $ sudo update-alternatives --config java
 
 **IV) :** **PrimeSensor Modules for OpenNI :**
   
