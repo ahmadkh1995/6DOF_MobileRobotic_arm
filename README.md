@@ -144,6 +144,9 @@ Note: If ./RedistMaker failed,most probably you should configure gcc and g++ to 
 
 Now, you should set gcc and g++ to version 4.8 :
 
+    $ sudo update-alternatives --config gcc
+    $ sudo update-alternatives --config g++
+
 
 **IV) :** **PrimeSensor Modules for OpenNI :**
   
