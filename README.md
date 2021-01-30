@@ -266,28 +266,21 @@ ROS associated package : [GMapping](http://www.openslam.org)
 
 which requires odometry data and a source of depth data.To use the depth image for SLAM ,the point cloud should be converted  to a faked laser scan signal by cutting a horizontal slice out of the image and using the nearest distance (closest depth) in each column.
       
-**Create a 2-D map from logged transform and laser scan data :**
+#### Create a 3-D map from RGB_D camera(Kinect) :
 Required Packages:
 
-**map_server:** allows dynamically generated maps to be saved to file.
+### RTAB-MAP:
+[source](http://introlab.github.io/rtabmap/)
 
-**openslam_gmapping** ||| **slam_gmapping** 
+        # 1st Terminal
+        $ roslaunch openni_launch openni.launch depth_registration:=true device_id:=#2
+        # 2nd Terminal
+        $ roslaunch rtabmap_test test_.launch
 
-    //catkin_ws/src  directory
-    $ git clone https://github.com/ros-perception/openslam_gmapping
-    $ git clone https://github.com/ros-perception/slam_gmapping
-    $ git clone https://github.com/ros-planning/navigation
-    $ catkin_make
-    $ roscore
-    $ rosrun gmapping slam_gmapping scan:=base_scan
-I need a ROS bag file.So first I should create a new one : 
+For having [Octo-Map](http://wiki.ros.org/octomap) , we need to install its plugins first;
 
-    $ rosbag record -O mylaserdata /base_scan /tf
-or if you have your own run this command:
-
-    $ rosbag play --clock <name of the bag>
-      //Wait for rosbag to finish and exit....
-    $ rosrun map_server map_saver -f <my map_name>
+        $ sudo apt-get install ros-melodic-octomap
+        $ sudo apt-get install ros-melodic-octomap-rviz-plugins
 
 
 
